@@ -1,0 +1,43 @@
+.formularioRegistro{
+    padding-left: 20px;
+    padding-right:5%;
+    margin-right: 0%;
+    padding-top: center;
+    margin-top: 3%;
+    margin-left: 2%;
+    display: flex;
+    
+}
+
+.formulario{
+    margin-right: 150px;
+    
+}
+
+.campoDeTexto{
+    border-color: black;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    margin-bottom: 12px;
+}
+
+.areaBotones{
+    width:100%;
+    margin-right: 3px;
+    margin-left: 3px;
+    padding: 20px;
+    display:flex;
+    flex-wrap: nowrap;
+    flex-flow: row;
+    
+    
+}
+
+.boton{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight:bold;
+}
+
+.mousePointer{
+    cursor: pointer;
+}

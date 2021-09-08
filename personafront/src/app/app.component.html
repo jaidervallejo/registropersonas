@@ -1,0 +1,49 @@
+
+<div class="formularioRegistro">
+  
+  <form [formGroup] = "personaForm" (ngSubmit)= "guardar()" class="formulario">
+    <h2 class="titulo">Formulario de registro</h2>
+    <div class="form-group">
+      <label for="campoCedula">Cedula</label>
+      <input type="number" formControlName="cedula" class ="form-control campoDeTexto" id="campoCedula" required="true">
+
+      <label for="campoNombre">Nombre</label>
+      <input type="text" formControlName="nombre" class ="form-control campoDeTexto" id="campoNombre" required="true">
+
+      <label for="campoFecha">Fecha de nacimiento</label>
+      <input type="date" formControlName="fecha_nacimiento" class ="form-control campoDeTexto" id="campoFecha" required>
+
+      <!-- <div class="areaBotones"> -->
+        <button type="submit" class="boton btn btn-primary"><i class="boton bi bi-trash-fill">GUARDAR</i></button>
+        <button type="button" (click)="editar()" class="boton btn btn-success"><i class="boton bi bi-trash-fill">EDITAR</i></button>
+
+      <!-- </div> -->
+      
+    </div>
+  </form>
+  
+  <table class="table table-sm" id="tablaPersonas">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col" class="mousePointer" (click)="ordenar('cedula')">Cedula</th>
+        <th scope="col" class="mousePointer" (click)="ordenar('nombre')">Nombre</th>
+        <th scope="col" class="mousePointer" (click)="ordenar('fecha_nacimiento')">Fecha De Nacimiento</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of personas; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{ persona.cedula }}</td>
+        <td>{{ persona.nombre }}</td>
+        <td>{{ persona.fecha_nacimiento }}</td>
+        <td>
+          <button type="button" (click)="eliminar(persona.cedula)" class="btn btn-danger"><i class="bi bi-trash">ELIMINAR</i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+</div>
