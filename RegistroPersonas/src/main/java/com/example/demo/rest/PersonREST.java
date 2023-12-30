@@ -12,40 +12,40 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.Persona;
-import com.example.demo.services.PersonaService;
+import com.example.demo.model.Person;
+import com.example.demo.services.PersonService;
 
 @RestController
 @RequestMapping("/personas")
-public class PersonaREST {
+public class PersonREST {
 
 
 	//Inyectamos la dependencia de la implementacion del servicio
 	@Autowired
 	@Qualifier("personaServiceImpl")
-	private PersonaService personaService;
+	private PersonService personService;
 	
 	
 	@GetMapping("/listar_todos")
-	private ResponseEntity<List<Persona>> getAllPeople(){
-		return ResponseEntity.ok(personaService.listAllPeople());
+	private ResponseEntity<List<Person>> getAllPeople(){
+		return ResponseEntity.ok(personService.listAllPeople());
 	}
 	
 	@PostMapping("/add")
-	private String agregar(@RequestBody Persona persona){
-		personaService.addPersona(persona);
+	private String add(@RequestBody Person person){
+		personService.addPerson(person);
 		return "";
 	}
 	
 	@PostMapping("/update")
-	private String editar(@RequestBody Persona persona) {
+	private String edit(@RequestBody Person persona) {
 		
-		personaService.updatePersona(persona);
+		personService.updatePerson(persona);
 		return "";
 	}
 	
 	@GetMapping("/deleteById")
-	private void borrar(@RequestParam(name="cedula") int cedula) {//recupera el parametro enviado desde la vista
-		personaService.removePersonaById(cedula);
+	private void delete(@RequestParam(name="cedula") int id) {//recupera el parametro enviado desde la vista
+		personService.removePersonById(id);
 	}
 }
