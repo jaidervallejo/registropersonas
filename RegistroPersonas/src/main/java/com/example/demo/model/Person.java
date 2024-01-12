@@ -14,6 +14,7 @@ public class Person {
 	private int id;
 	private String name;
 	private LocalDate birthDate;
+	private int age;
 	
 	public Person() {}
 	
@@ -33,6 +34,9 @@ public class Person {
 	public LocalDate getBirthDate() {
 		return birthDate;
 	}
+	public int getAge() {
+		return age;
+	}
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -41,6 +45,9 @@ public class Person {
 	}
 	public void setBirthDate(LocalDate birthDate) {
 		this.birthDate = birthDate;
+	}
+	public void setAge(int age) {
+		this.age = age;
 	}
 	
 }

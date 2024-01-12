@@ -32,8 +32,8 @@ public class PersonREST {
 	}
 	
 	@PostMapping("/add")
-	private String add(@RequestBody Person person){
-		personService.addPerson(person);
+	private String add(@RequestBody Person persona){
+		personService.addPerson(persona);
 		return "";
 	}
 	
